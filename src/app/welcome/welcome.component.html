@@ -1,0 +1,32 @@
+<body style="background-color: rgb(7, 16, 19);">    
+    <div class="container bg-light py-5" style="background-color: dimgrey;">
+        <h1 class="display-5 fw-bold" style="background-color: rgb(28, 39, 58); color: rgb(210, 204, 235); text-align: center;">Welcome to the Online Test Application</h1>
+        <br>
+        <hr>
+        <br>
+        <p class="col-md-8 fs-4" style="text-align: center;"><u>Please login to proceed to the test.</u></p>
+        <hr>
+        <br>
+        <div class="name col-md-4 my-3" style="background-color: rgb(55, 57, 87); text-align: center; align-content: center;">
+            <form [formGroup]="username" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label style="color: lavender;">Enter User Name</label>
+                    <input #name type="text" formControlName="name" class="form-control"
+                    [ngClass]="{'is-invalid':submitted && f['name'].errors}">
+                    <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+                        <div *ngIf="f['name'].errors['required']">
+                            User Name can't be empty
+                        </div>
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <button class="btn btn-primary">StartTest</button>
+                </div>
+            </form>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <h1 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; text-align: center; color: rgb(230, 214, 123); background-color: rgb(43, 43, 63);">*****All The Best*****</h1>
+    </div>
+</body>
